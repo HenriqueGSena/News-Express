@@ -37,6 +37,8 @@ export default Vue.extend({
   },
   mounted() {
     //  TODO: Obter URL
+      const urlParams = new URLSearchParams(window.location.search);
+      this.seacher = urlParams.get("seacher");
     //  TODO: Atualizar o valor da query
 
     axios
@@ -59,7 +61,7 @@ export default Vue.extend({
 #card-news {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-around;
   padding: 3%;
 }
