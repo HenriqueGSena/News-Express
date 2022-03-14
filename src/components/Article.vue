@@ -32,26 +32,22 @@ export default Vue.extend({
   data: function () {
     return {
       articles: [],
-      query: "Apple",
+      query: "",
     };
   },
   mounted() {
-    //  TODO: Obter URL
-      const urlParams = new URLSearchParams(window.location.search);
-      this.seacher = urlParams.get("seacher");
-    //  TODO: Atualizar o valor da query
+    //  TODO: Obter URL e Atualizar o valor da query
+    const queryString = window.location.search;
+    const sortBy = "";
 
     axios
       .get(
-        "https://newsapi.org/v2/everything?" +
-          `q=${this.query}&` +
-          "from=2022-03-11&" +
-          "sortBy=popularity&" +
+        `https://newsapi.org/v2/everything${queryString}&` +
+          `sortBy=${sortBy}&` +
           "apiKey=ca26dfefe6e8488d88bdc0b51a311335"
       )
       .then((res) => {
         this.articles = res.data.articles;
-        console.log(this.articles);
       });
   },
 });

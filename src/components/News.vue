@@ -8,18 +8,24 @@
       <form action="">
         <input
           type="search"
-          name="searcher"
+          name="q"
           v-model="searchword"
           id="form1"
           class="form1"
           placeholder="Pesquise Aqui..."
         />
+        {{selected}}
+        <select v-model="selected" name="options" id="options">
+          <option disabled value="">Topicos</option>
+          <option v-for="topic in topic_options" :key="topic" :value="topic">{{ topic }}</option>
+        </select>
       </form>
     </div>
   </div>
 </template>
 
 <script lang="ts" src="./News.component.ts"></script>
+
 <style scoped>
 #news {
   display: flex;
