@@ -19,5 +19,6 @@ export default Vue.extend({
     Header,
     Article,
   },
+
 });
 </script>

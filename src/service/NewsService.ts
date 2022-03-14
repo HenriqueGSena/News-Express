@@ -19,12 +19,8 @@ export default class NewsService {
     return new Promise<any>((resolve, reject) => {
       axios
         .get(url)
-        .then(function (res) {
-          resolve(res);
-        })
-        .catch((err) => {
-          reject(err);
-        });
+        .then((res) => resolve(res))
+        .catch((err) => reject(err));
     });
   }
 }

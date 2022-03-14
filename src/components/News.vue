@@ -14,10 +14,10 @@
           class="form1"
           placeholder="Pesquise Aqui..."
         />
-        {{selected}}
+        
         <select v-model="selected" name="options" id="options">
           <option disabled value="">Topicos</option>
-          <option v-for="topic in topic_options" :key="topic" :value="topic">{{ topic }}</option>
+          <option v-for="topic in topic_options" :key="topic" :value="topic.value">{{ topic.label }}</option>
         </select>
       </form>
     </div>
@@ -54,5 +54,13 @@
   padding: 12px;
   margin: 12px;
   background-color: var(--color-background);
+}
+
+#options {
+  display: flex;
+  margin-left: 24%;
+  margin-top: 4%;
+  text-align: center;
+  border: 2px;
 }
 </style>
