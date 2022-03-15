@@ -1,9 +1,12 @@
 import axios from "axios";
-//import { URLSearchParams } from "url";
 
 const baseApiUrl = "https://newsapi.org/v2";
 
 export default class NewsService {
+  static findEverythingNewsByParameter($data: Record<string, any>, searchword: string) {
+    throw new Error("Method not implemented.");
+  }
+  
   public findEverythingNewsByParameter(
     data: string,
     assunto: string
@@ -11,7 +14,7 @@ export default class NewsService {
     let payload = {
       q: assunto,
       from: data,
-      sortBy: "popularity",
+      sortBy: "",
       apiKey: "ca26dfefe6e8488d88bdc0b51a311335",
     };
     const params = new URLSearchParams(payload).toString();

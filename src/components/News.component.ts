@@ -3,8 +3,9 @@ import NewsService from "@/service/NewsService";
 
 @Component
 export default class News extends Vue {
-  @Inject('newService')
-  private newService: () => NewsService;
+  @Inject("newsService")
+  private readonly newsService: () => NewsService;
+
   public searchword: string = "";
   public selected = "";
   public topic_options = [
@@ -15,5 +16,10 @@ export default class News extends Vue {
 
   public mounted() {
     console.log(NewsService);
+    this.$emit("resultadoBusca");
+  }
+
+  private getNews() {
+    NewsService.findEverythingNewsByParameter(this.$data, this.searchword);
   }
 }

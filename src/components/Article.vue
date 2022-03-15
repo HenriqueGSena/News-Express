@@ -13,7 +13,7 @@
         :src="article.urlToImage"
       />
       <div class="card-body">
-        <h5 class="card-title">{{ article.title }}</h5>
+        <h5 id="card-title" class="card-title">{{ article.title }}</h5>
         <p class="card-text"></p>
         <a :href="article.url" target="blank" class="btn btn-primary"
           >Clique Aqui</a
@@ -27,16 +27,13 @@
 import Vue from "vue";
 import axios from "axios";
 
-export default Vue.extend({
-  name: "Article",
-  data: function () {
-    return {
-      articles: [],
-      query: "",
-    };
-  },
+export default class Article extends Vue {
+
+  public articles: any[] = [];
+
+  public query: string = "";
+  
   mounted() {
-    //  TODO: Obter URL e Atualizar o valor da query
     const queryString = window.location.search;
     const sortBy = "";
 
@@ -49,8 +46,10 @@ export default Vue.extend({
       .then((res) => {
         this.articles = res.data.articles;
       });
-  },
-});
+  }
+
+}
+
 </script>
 
 <style scoped>
@@ -60,5 +59,9 @@ export default Vue.extend({
   align-items: flex-start;
   justify-content: space-around;
   padding: 3%;
+}
+
+#card-title {
+  font-family: 'Roboto', sans-serif;
 }
 </style>

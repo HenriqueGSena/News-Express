@@ -12,12 +12,18 @@
           v-model="searchword"
           id="form1"
           class="form1"
-          placeholder="Pesquise Aqui..."
+          placeholder="Search articles..."
         />
-        
+
         <select v-model="selected" name="options" id="options">
-          <option disabled value="">Topicos</option>
-          <option v-for="topic in topic_options" :key="topic" :value="topic.value">{{ topic.label }}</option>
+          <option disabled value="">Topics</option>
+          <option
+            v-for="topic in topic_options"
+            :key="topic"
+            :value="topic.value"
+          >
+            {{ topic.label }}
+          </option>
         </select>
       </form>
     </div>
@@ -62,5 +68,7 @@
   margin-top: 4%;
   text-align: center;
   border: 2px;
+  background-color: var(--color-text-light);
+  padding: 3% 3% 2% 2%;
 }
 </style>

@@ -10,9 +10,6 @@ Vue.config.productionTip = false;
 
 new Vue({
   render: (h) => h(App),
-  // provide: () => ({
-  //   'newsService': new NewsService
-  // })
   provide: {
     newsService: () => new NewsService
   }
