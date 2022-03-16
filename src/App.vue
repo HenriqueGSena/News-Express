@@ -12,7 +12,6 @@ import "./styles/global.css";
 import Header from "./components/Header.vue";
 import News from "./components/News.vue";
 import Article from "./components/Article.vue";
-import NewsService from "./service/NewsService";
 import Component from "vue-class-component";
 
 @Component({

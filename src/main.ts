@@ -9,8 +9,12 @@ Vue.use(BootstrapVue);
 Vue.config.productionTip = false;
 
 new Vue({
+  el: '#app',
+  components: {
+    App
+  },
   render: (h) => h(App),
   provide: {
-    newsService: () => new NewsService
+    newsService: () => new NewsService()
   }
 }).$mount("#app");

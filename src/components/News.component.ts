@@ -3,10 +3,12 @@ import NewsService from "@/service/NewsService";
 
 @Component
 export default class News extends Vue {
+
   @Inject("newsService")
-  private readonly newsService: () => NewsService;
+  private newsService!: () => NewsService;
 
   public searchword: string = "";
+  public data: string = "";
   public selected = "";
   public topic_options = [
     { label: "Relevante", value: "relevancy" },
@@ -16,10 +18,17 @@ export default class News extends Vue {
 
   public mounted() {
     console.log(NewsService);
+    this.getNews();
     this.$emit("resultadoBusca");
   }
 
   private getNews() {
-    NewsService.findEverythingNewsByParameter(this.$data, this.searchword);
+    this.newsService.findEverythingNewsByParameter(this.data, this.searchword)
+    .then(res => {
+      console.log("deu bom" + res.data);
+    })
+    .catch( err => {
+        console.log("deu ruim");
+    });
   }
 }

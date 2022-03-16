@@ -1,11 +1,11 @@
 import axios from "axios";
+import { Component, Provide } from "vue-property-decorator";
+import Vue from "vue/types/umd";
 
 const baseApiUrl = "https://newsapi.org/v2";
 
+
 export default class NewsService {
-  static findEverythingNewsByParameter($data: Record<string, any>, searchword: string) {
-    throw new Error("Method not implemented.");
-  }
   
   public findEverythingNewsByParameter(
     data: string,

@@ -13,7 +13,7 @@
     "experimentalDecorators": true,
      "allowJs": true,
     "useDefineForClassFields": true,
-    "strictPropertyInitialization": false,
+    // "strictPropertyInitialization": false,
     "sourceMap": true,
     "baseUrl": ".",
     "types": [
