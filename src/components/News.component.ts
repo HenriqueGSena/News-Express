@@ -16,18 +16,13 @@ export default class News extends Vue {
     { label: "Data de publicação", value: "publishedAt" },
   ];
 
-  public mounted() {
-    console.log(NewsService);
-    this.$emit("resultadoBusca");
-  }
-
   private getEverythingNews() {
-    this.newsService().findEverythingNewsByParameter(this.data,this.searchword)
+    this.newsService().findEverythingNewsByParameter(this.data, this.searchword)
     .then(res => {
-      console.log("deu bom" + res.data);
+      this.$emit("resultadoBusca", res.data.articles);
     })
     .catch( err => {
-        console.log("deu ruim");
+
     });
   }
 }

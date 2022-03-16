@@ -15,7 +15,7 @@
           placeholder="Search articles..."
         />
         
-         <b-button class="btn" @click="getEverythingNews" variant="Consult">Consult</b-button>
+         <b-button class="btn" @click="getEverythingNews" variant="primary">Consult</b-button>
 
         <select v-model="data" name="options" id="options">
           <option disabled value="">Topics</option>

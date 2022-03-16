@@ -17,11 +17,13 @@ export default class NewsService {
     };
     const params = new URLSearchParams(payload).toString();
     let url = `${baseApiUrl}/everything?${params}`;
+    console.log(url);
     return new Promise<any>((resolve, reject) => {
       axios
         .get(url)
         .then((res) => resolve(res))
         .catch((err) => reject(err));
     });
+  
   }
 }

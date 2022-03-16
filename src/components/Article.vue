@@ -24,31 +24,16 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import axios from "axios";
-import Component from "vue-class-component";
+
+import { Prop, Vue, Component } from "vue-property-decorator";
 
 @Component
 export default class Article extends Vue {
 
+  @Prop()
   public articles: any[] = [];
 
   public query: string = "";
-  
-  mounted() {
-    const queryString = window.location.search;
-    const sortBy = "";
-
-    axios
-      .get(
-        `https://newsapi.org/v2/everything${queryString}&` +
-          `sortBy=${sortBy}&` +
-          "apiKey=ca26dfefe6e8488d88bdc0b51a311335"
-      )
-      .then((res) => {
-        this.articles = res.data.articles;
-      });
-  }
 
 }
 

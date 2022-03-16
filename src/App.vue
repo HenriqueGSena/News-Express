@@ -23,10 +23,11 @@ import Component from "vue-class-component";
 })
 export default class App extends Vue {
 
-  private articles: any[] = [];
+  public articles: any[] = [];
 
-  set setArticles(articles: any[]) {
+  public setArticles(articles: any[]) {
     this.articles = articles;
+    console.log(articles);
   }
 
 }
