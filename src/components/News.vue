@@ -14,8 +14,10 @@
           class="form1"
           placeholder="Search articles..."
         />
+        
+         <b-button class="btn" @click="getEverythingNews" variant="Consult">Consult</b-button>
 
-        <select v-model="selected" name="options" id="options">
+        <select v-model="data" name="options" id="options">
           <option disabled value="">Topics</option>
           <option
             v-for="topic in topic_options"
@@ -56,10 +58,15 @@
   font-size: 20px;
   text-align: center;
   border: 2px;
-  border-radius: 1px;
+  border-radius: 5px;
   padding: 12px;
   margin: 12px;
   background-color: var(--color-background);
+}
+
+.btn{
+  padding: 12px;
+  height: 47px;
 }
 
 #options {

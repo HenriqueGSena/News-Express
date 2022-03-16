@@ -18,12 +18,11 @@ export default class News extends Vue {
 
   public mounted() {
     console.log(NewsService);
-    this.getNews();
     this.$emit("resultadoBusca");
   }
 
-  private getNews() {
-    this.newsService.findEverythingNewsByParameter(this.data, this.searchword)
+  private getEverythingNews() {
+    this.newsService().findEverythingNewsByParameter(this.data,this.searchword)
     .then(res => {
       console.log("deu bom" + res.data);
     })
