@@ -11,9 +11,9 @@ export default class News extends Vue {
   public data: string = "";
   public selected = "";
   public topic_options = [
-    { label: "Relevante", value: "relevancy" },
-    { label: "Popularidade", value: "popularity" },
-    { label: "Data de publicação", value: "publishedAt" },
+    { label: "Relevancy", value: "relevancy" },
+    { label: "Popularity", value: "popularity" },
+    { label: "PublishedAt", value: "publishedAt" },
   ];
 
   private getEverythingNews() {
@@ -22,7 +22,7 @@ export default class News extends Vue {
       this.$emit("resultadoBusca", res.data.articles);
     })
     .catch( err => {
-
+      console.log("Deu Ruim");
     });
   }
 }

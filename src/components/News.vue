@@ -12,10 +12,10 @@
           v-model="searchword"
           id="form1"
           class="form1"
-          placeholder="Search articles..."
+          placeholder="Search articles"
         />
         
-         <b-button class="btn" @click="getEverythingNews" variant="primary">Consult</b-button>
+         <b-button class="btn" @click="getEverythingNews" variant="primary">Search</b-button>
 
         <select v-model="data" name="options" id="options">
           <option disabled value="">Topics</option>

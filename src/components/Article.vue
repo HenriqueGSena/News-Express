@@ -5,7 +5,6 @@
       id="card"
       v-for="(article, index) in articles"
       :key="index"
-      style="width: 18rem"
     >
       <img
         class="card-img-top"
@@ -40,15 +39,35 @@ export default class Article extends Vue {
 </script>
 
 <style scoped>
+
 #card-news {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-around;
-  padding: 3%;
+  padding: 1%;
 }
 
 #card-title {
+  font-size: inherit;
   font-family: 'Roboto', sans-serif;
+  padding-top: 17px;
+  padding-bottom: 21px;
 }
+
+.card {
+  width: 16rem;
+  height: 19rem;
+  margin: 1%;
+}
+
+.card-img-top {
+  height: 51%;
+}
+
+.card-body {
+  padding: 10px;
+}
+
+
 </style>
