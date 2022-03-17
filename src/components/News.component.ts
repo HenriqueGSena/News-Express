@@ -9,7 +9,6 @@ export default class News extends Vue {
 
   public searchword: string = "";
   public data: string = "";
-  public selected = "";
   public topic_options = [
     { label: "Relevancy", value: "relevancy" },
     { label: "Popularity", value: "popularity" },
