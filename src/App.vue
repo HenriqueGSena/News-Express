@@ -14,6 +14,7 @@ import News from "./components/News.vue";
 import Article from "./components/Article.vue";
 import Component from "vue-class-component";
 
+
 @Component({
   components: {
     News,

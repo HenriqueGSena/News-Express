@@ -1,7 +1,20 @@
 import { Vue, Component, Inject } from "vue-property-decorator";
 import NewsService from "@/service/NewsService";
+import { required } from "vuelidate/lib/validators";
 
-@Component
+
+const validations: any = {
+  searchword: {
+    required
+  },
+  data: {
+    required
+  },
+}
+
+@Component({
+  validations
+})
 export default class News extends Vue {
 
   @Inject("newsService")
@@ -21,7 +34,7 @@ export default class News extends Vue {
       this.$emit("resultadoBusca", res.data.articles);
     })
     .catch( err => {
-      console.log("Deu Ruim");
+      
     });
   }
 }
