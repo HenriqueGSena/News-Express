@@ -3,7 +3,6 @@
     <Header />
     <News @resultadoBusca="setArticles($event)"/>
     <Article :articles='articles'/>
-    <Validations />
   </div>
 </template>
 
@@ -14,14 +13,12 @@ import Header from "./components/Header.vue";
 import News from "./components/News.vue";
 import Article from "./components/Article.vue";
 import Component from "vue-class-component";
-import Validations from "./components/Validations.vue"
 
 @Component({
   components: {
     News,
     Header,
     Article,
-    Validations
   }
 })
 export default class App extends Vue {
