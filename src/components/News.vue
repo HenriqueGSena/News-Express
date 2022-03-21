@@ -32,8 +32,8 @@
       Por favor digite no campo acima
     </p>
 
-    <section class="selection-list">
-      <select v-model="data" name="options" id="options">
+    <section id="selection-list">
+      <select v-model="data" name="options" class="options">
         <option disabled value="">Topics</option>
         <option
           v-for="(topic, index) in topic_options"
@@ -44,7 +44,7 @@
         </option>
       </select>
 
-      <select v-model="language" name="language" id="language">
+      <select v-model="language" name="language" class="language">
         <option disabled value="">Language</option>
         <option
           v-for="(language, index) in topic_language"
@@ -104,21 +104,21 @@
   height: 47px;
 }
 
-.selection-list {
+#selection-list {
   display: flex;
   flex-wrap: inherit;
   margin-top: 1%;
   justify-content: space-evenly;
 }
 
-#options {
+.options {
   text-align: left;
   border: 2px;
   background-color: var(--color-text-light);
   padding: 3% 3% 2%;
 }
 
-#language {
+.language {
   text-align: left;
   margin-left: 12%;
   border: 2px;
