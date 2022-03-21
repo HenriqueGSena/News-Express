@@ -29,8 +29,10 @@ import { Prop, Vue, Component } from "vue-property-decorator";
 @Component
 export default class Article extends Vue {
 
-  @Prop()
-  public articles: any[] = [];
+  @Prop({
+    default: []
+  })
+  public articles!: any[];
 
   public query: string = "";
 

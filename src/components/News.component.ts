@@ -9,7 +9,7 @@ const validations: any = {
   },
   data: {
     required
-  },
+  }
 }
 
 @Component({
@@ -22,19 +22,34 @@ export default class News extends Vue {
 
   public searchword: string = "";
   public data: string = "";
+  public language: string = "";
   public topic_options = [
     { label: "Relevancy", value: "relevancy" },
     { label: "Popularity", value: "popularity" },
     { label: "PublishedAt", value: "publishedAt" },
   ];
+  public topic_language = [
+    { label: "Arabic", value: "ar" },
+    { label: "German", value: "de" },
+    { label: "English", value: "en" },
+    { label: "Spanish", value: "es" },
+    { label: "French", value: "fr" },
+    { label: "Hebrew", value: "he" },
+    { label: "Italian", value: "it" },
+    { label: "Dutch", value: "nl" },
+    { label: "Norwegian", value: "no" },
+    { label: "Portuguese", value: "pt" },
+    { label: "Russian", value: "ru" },
+    { label: "Chinese", value: "zh" },
+  ];
 
   private getEverythingNews() {
-    this.newsService().findEverythingNewsByParameter(this.data, this.searchword)
+    this.newsService().findEverythingNewsByParameter(this.data, this.searchword, this.language)
     .then(res => {
       this.$emit("resultadoBusca", res.data.articles);
     })
     .catch( err => {
-      
+      console.log(err)
     });
   }
 }

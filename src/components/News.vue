@@ -4,31 +4,57 @@
       <h1 id="title-news">Express News &#9749;</h1>
     </div>
 
-    <div id="busca-news">
-      <form action="">
-        <input
-          type="search"
-          name="q"
-          v-model="searchword"
-          id="form1"
-          class="form1"
-          placeholder="Search articles"
-        />
-        
-         <b-button class="btn" @click="getEverythingNews" variant="primary">Search</b-button>
+    <section id="search-field">
+      <div class="busca-news">
+        <form>
+          <input
+            type="search"
+            name="q"
+            v-model="searchword"
+            @change="$v.searchword.$touch()"
+            class="form1"
+            placeholder="Search articles"
+          />
 
-        <select v-model="data" name="options" id="options">
-          <option disabled value="">Topics</option>
-          <option
-            v-for="topic in topic_options"
-            :key="topic"
-            :value="topic.value"
+          <b-button
+            class="btn"
+            @click="getEverythingNews"
+            @click.prevent="$v.$touch()"
+            :disabled="$v.searchword.$invalid"
+            variant="primary"
+            >Search</b-button
           >
-            {{ topic.label }}
-          </option>
-        </select>
-      </form>
-    </div>
+        </form>
+      </div>
+    </section>
+
+    <p class="p" v-if="$v.searchword.$error">
+      Por favor digite no campo acima
+    </p>
+
+    <section class="selection-list">
+      <select v-model="data" name="options" id="options">
+        <option disabled value="">Topics</option>
+        <option
+          v-for="(topic, index) in topic_options"
+          :key="index"
+          :value="topic.value"
+        >
+          {{ topic.label }}
+        </option>
+      </select>
+
+      <select v-model="language" name="language" id="language">
+        <option disabled value="">Language</option>
+        <option
+          v-for="(language, index) in topic_language"
+          :key="index"
+          :value="language.value"
+        >
+          {{ language.label }}
+        </option>
+      </select>
+    </section>
   </div>
 </template>
 
@@ -49,12 +75,16 @@
   color: #835546;
 }
 
+#search-field {
+  align-items: center;
+}
+
 #busca-news {
   text-align: center;
   padding-top: 1%;
 }
 
-#form1 {
+.form1 {
   font-size: 20px;
   text-align: center;
   border: 2px;
@@ -64,18 +94,35 @@
   background-color: var(--color-background);
 }
 
-.btn{
+.p {
+  color: red;
+  align-items: center;
+}
+
+.btn {
   padding: 12px;
   height: 47px;
 }
 
-#options {
+.selection-list {
   display: flex;
-  margin-left: 24%;
-  margin-top: 4%;
-  text-align: center;
+  flex-wrap: inherit;
+  margin-top: 1%;
+  justify-content: space-evenly;
+}
+
+#options {
+  text-align: left;
   border: 2px;
   background-color: var(--color-text-light);
-  padding: 3% 3% 2% 2%;
+  padding: 3% 3% 2%;
+}
+
+#language {
+  text-align: left;
+  margin-left: 12%;
+  border: 2px;
+  background-color: var(--color-text-light);
+  padding: 3% 3% 2%;
 }
 </style>
