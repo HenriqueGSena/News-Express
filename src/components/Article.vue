@@ -2,7 +2,6 @@
   <div id="card-news">
     <div
       class="card"
-      id="card"
       v-for="(article, index) in articles"
       :key="index"
     >
@@ -12,7 +11,7 @@
         :src="article.urlToImage"
       />
       <div class="card-body">
-        <h5 id="card-title" class="card-title">{{ article.title }}</h5>
+        <h5 class="card-title">{{ article.title }}</h5>
         <p class="card-text"></p>
         <a :href="article.url" target="blank" class="btn btn-primary"
           >Clique Aqui</a
@@ -50,7 +49,7 @@ export default class Article extends Vue {
   padding: 1%;
 }
 
-#card-title {
+.card-title {
   font-size: inherit;
   font-family: 'Roboto', sans-serif;
   padding-top: 17px;
@@ -70,6 +69,4 @@ export default class Article extends Vue {
 .card-body {
   padding: 10px;
 }
-
-
 </style>
