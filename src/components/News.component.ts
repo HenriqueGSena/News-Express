@@ -44,7 +44,7 @@ export default class News extends Vue {
   public topic_searchIn = [
     { label: "Title", value: "title" },
     { label: "Description", value: "description" },
-    { label: "Content", value: "content" }
+    { label: "Author", value: "author" }
   ];
 
   private getEverythingNews() {

@@ -1,72 +1,37 @@
 <template>
-  <div id="card-news">
-    <div
-      class="card"
-      v-for="(article, index) in articles"
-      :key="index"
-    >
-      <img
-        class="card-img-top"
-        alt="Card image cap"
-        :src="article.urlToImage"
-      />
-      <div class="card-body">
-        <h5 class="card-title">{{ article.title }}</h5>
-        <p class="card-text"></p>
-        <a :href="article.url" target="blank" class="btn btn-primary"
-          >Clique Aqui</a
+  <div>
+    <b-card-group class="justify-content-evenly" style="margin-top: 4%">
+      <div v-for="(article, index) in articles" :key="index">
+        <b-card
+          :title="article.title"
+          :img-src="article.urlToImage"
+          img-alt="Imagem"
+          style="max-width: 20rem"
+          class="mb-3"
         >
+          <b-card-text>{{ article.description }}</b-card-text>
+          <b-card-text>{{ article.author }}</b-card-text>
+          <b-button :href="article.url" target="blank" variant="primary"
+            >Clique Aqui</b-button
+          >
+        </b-card>
       </div>
-    </div>
+    </b-card-group>
   </div>
 </template>
 
 <script lang="ts">
-
 import { Prop, Vue, Component } from "vue-property-decorator";
 
 @Component
 export default class Article extends Vue {
-
   @Prop({
-    default: []
+    default: [],
   })
   public articles!: any[];
 
   public query: string = "";
-
 }
-
 </script>
 
-<style scoped>
-
-#card-news {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: space-around;
-  padding: 1%;
-}
-
-.card-title {
-  font-size: inherit;
-  font-family: 'Roboto', sans-serif;
-  padding-top: 17px;
-  padding-bottom: 21px;
-}
-
-.card {
-  width: 16rem;
-  height: 19rem;
-  margin: 1%;
-}
-
-.card-img-top {
-  height: 51%;
-}
-
-.card-body {
-  padding: 10px;
-}
-</style>
+<style scoped></style>
