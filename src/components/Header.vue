@@ -12,6 +12,6 @@ export default {
 header {
   background-color: var(--color-background-nav);
   width: 100%;
-  height: 40px;
+  height: 30px;
 }
 </style>

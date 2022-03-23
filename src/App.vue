@@ -3,6 +3,7 @@
     <Header />
     <News @resultadoBusca="setArticles($event)"/>
     <Article :articles='articles'/>
+    <Pagination />
   </div>
 </template>
 
@@ -13,6 +14,7 @@ import Header from "./components/Header.vue";
 import News from "./components/News.vue";
 import Article from "./components/Article.vue";
 import Component from "vue-class-component";
+import Pagination from "./components/Pagination.vue";
 
 
 @Component({
@@ -20,6 +22,7 @@ import Component from "vue-class-component";
     News,
     Header,
     Article,
+    Pagination,
   }
 })
 export default class App extends Vue {
