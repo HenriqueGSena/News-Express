@@ -25,7 +25,7 @@ export default class News extends Vue {
   public topic_options = [
     { label: "Relevancy", value: "relevancy" },
     { label: "Popularity", value: "popularity" },
-    { label: "PublishedAt", value: "publishedAt" }
+    { label: "PublishedAt", value: "publishedAt" },
   ];
   public topic_language = [
     { label: "Arabic", value: "ar" },
@@ -39,12 +39,12 @@ export default class News extends Vue {
     { label: "Norwegian", value: "no" },
     { label: "Portuguese", value: "pt" },
     { label: "Russian", value: "ru" },
-    { label: "Chinese", value: "zh" }
+    { label: "Chinese", value: "zh" },
   ];
   public topic_searchIn = [
     { label: "Title", value: "title" },
     { label: "Description", value: "description" },
-    { label: "Author", value: "author" }
+    { label: "Author", value: "author" },
   ];
 
   private getEverythingNews() {

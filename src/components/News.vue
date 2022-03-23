@@ -26,7 +26,7 @@
       </div>
 
       <p class="p" v-if="$v.searchword.$error">
-        Por favor digite no campo acima
+        Por favor preencha o campo acima
       </p>
     </section>
 
@@ -38,7 +38,7 @@
           :key="index"
           :value="searchIn.value"
         >
-        {{ searchIn.label }}
+          {{ searchIn.label }}
         </option>
       </select>
 

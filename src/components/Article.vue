@@ -1,13 +1,13 @@
 <template>
   <div>
-    <b-card-group class="justify-content-evenly" style="margin-top: 4%">
+    <b-card-group class="justify-content-evenly" style="margin-top: 3%">
       <div v-for="(article, index) in articles" :key="index">
         <b-card
           :title="article.title"
           :img-src="article.urlToImage"
           img-alt="Imagem"
           style="max-width: 20rem"
-          class="mb-3"
+          class="mb-2"
         >
           <b-card-text>{{ article.description }}</b-card-text>
           <b-card-text>{{ article.author }}</b-card-text>

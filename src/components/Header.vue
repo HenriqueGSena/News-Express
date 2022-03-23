@@ -1,21 +1,17 @@
 <template>
-<header>
-
-</header>
+  <header></header>
 </template>
 
 <script lang="ts">
 export default {
-    name:'Header'
-}
+  name: "Header",
+};
 </script>
 
 <style scoped>
-
 header {
-    background-color: var(--color-background-nav);
-    width: 100%;
-    height: 40px;
+  background-color: var(--color-background-nav);
+  width: 100%;
+  height: 40px;
 }
-
 </style>
